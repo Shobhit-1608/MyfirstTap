@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.abdul.myfirsttap">
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
     <application
@@ -11,25 +12,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyfirstTap">
-        <activity android:name=".AsyncActivity">
+        <activity android:name=".notification"></activity>
+        <activity android:name=".call_log">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AsyncActivity" />
         <activity android:name=".RecyclerviewActivity"></activity>
         <activity
             android:name=".BottomNavActivity"
-            android:label="@string/title_activity_bottom_nav"></activity>
+            android:label="@string/title_activity_bottom_nav" />
         <activity
             android:name=".NavDrawerActivity"
             android:label="@string/title_activity_nav_drawer"
             android:theme="@style/Theme.MyfirstTap.NoActionBar" />
-        <activity android:name=".HomeActivity">
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".MainActivity" />
 
-        </activity>
-        <activity android:name=".MainActivity"></activity>
+        <receiver
+            android:name=".model.CallReciever"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.acion.PHONE_STATE"></action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
