@@ -21,4 +21,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="read_phone_call_logs">Read Phone Call logs!!</string>
+    <string name="start_service">Start Service</string>
+    <string name="stop_service">stop service</string>
 </resources>

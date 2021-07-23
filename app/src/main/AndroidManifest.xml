@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.abdul.myfirsttap">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:allowBackup="true"
@@ -12,16 +14,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyfirstTap">
-        <activity android:name=".notification"></activity>
-        <activity android:name=".call_log">
+        <activity android:name=".AlarmActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Serviceactivity">
+
+        </activity>
+
+
+
+
+        <activity android:name=".notification" />
+        <activity android:name=".call_log"></activity>
+
+        <service android:name=".MyService" />
+        <service android:name=".LocalService" />
+
         <activity android:name=".AsyncActivity" />
-        <activity android:name=".RecyclerviewActivity"></activity>
+        <activity android:name=".RecyclerviewActivity" />
         <activity
             android:name=".BottomNavActivity"
             android:label="@string/title_activity_bottom_nav" />
@@ -31,13 +44,14 @@
             android:theme="@style/Theme.MyfirstTap.NoActionBar" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity" />
+        <receiver android:name=".MyBroadcastReceiver"/>
 
         <receiver
             android:name=".model.CallReciever"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.acion.PHONE_STATE"></action>
+                <action android:name="android.intent.acion.PHONE_STATE" />
             </intent-filter>
         </receiver>
     </application>

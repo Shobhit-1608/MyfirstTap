@@ -4,17 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".notification">
+    tools:context=".AlarmActivity">
 
-    <Button
-        android:textColor="@color/white"
-        android:backgroundTint="#8E1616"
-        android:id="@+id/btn_button"
+    <ToggleButton
+        android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send Notification"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
+        android:text="ToggleButton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/alarmtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginBottom="53dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/toggleButton"
+        app:layout_constraintStart_toStartOf="@+id/toggleButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
